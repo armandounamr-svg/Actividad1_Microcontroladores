@@ -38,7 +38,7 @@ ldi r31, high(table_of_unsorted_numbers)
 
 ; contador de 100 numeros
 ldi count, 100
-
+;ojjojo
 ; semilla inicial
 ldi rand, 37
 
