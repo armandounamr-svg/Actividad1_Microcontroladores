@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Microcontroladores\Actividad 1\Actividad 1\main.asm Fri Mar 06 21:58:29 2026
+AVRASM ver. 2.2.8  C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm Sun Mar 08 23:50:59 2026
 
 
 EQU  SIGNATURE_000 0000001e
@@ -697,7 +697,8 @@ EQU  SPMRaddr     00000032
 EQU  INT_VECTORS_SIZE 00000034
 DEF  rand         r16
 DEF  count        r17
+DEF  temp         r18
 DSEG table_of_unsorted_numbers 00000100
 CSEG RESET        00000001
-CSEG GENERATE     00000005
-CSEG END          0000000d
+CSEG GENERATE     00000009
+CSEG END          00000011
