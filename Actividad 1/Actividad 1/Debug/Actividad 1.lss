@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm Sun Mar 08 23:50:59 2026
+AVRASM ver. 2.2.8  C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm Mon Mar 09 19:28:29 2026
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
 C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm(5): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc'
@@ -1036,15 +1036,19 @@ C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Activida
                                  ; ***** END OF FILE ******************************************************
                                  
                                  ;------------- REGISTROS ----------------
-                                 .def rand  = r16
-                                 .def count = r17
-                                 .def temp  = r18
+                                 .def rand    = r16
+                                 .def count   = r17
+                                 .def temp    = r18
+                                 .def aux1    = r19
+                                 .def aux2    = r20
+                                 .def min_val = r21
                                  
                                  ;------------- MEMORIA SRAM -------------
                                  .dseg
-                                 .org SRAM_START ; Aseguramos que empiece en el inicio de la RAM de datos
-                                 table_of_unsorted_numbers:
-000100                           .byte 100
+                                 .org 0x0100
+000100                           table_of_unsorted_numbers:    .byte 100
+000164                           table_of_sorted_numbers_alg1:  .byte 100
+0001c8                           table_of_sorted_numbers_alg2:  .byte 100
                                  
                                  ;------------- CODIGO -------------------
                                  .cseg
@@ -1052,36 +1056,124 @@ C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Activida
 000000 c000                      rjmp RESET
                                  
                                  RESET:
-                                     ; 1. Inicializar Puntero de Pila (Stack Pointer)
 000001 ef2f                          ldi temp, low(RAMEND)
 000002 bf2d                          out SPL, temp
 000003 e028                          ldi temp, high(RAMEND)
 000004 bf2e                          out SPH, temp
                                  
-                                     ; 2. Inicializar puntero Z para apuntar a la SRAM
-000005 e0e0                          ldi ZL, low(table_of_unsorted_numbers)
-000006 e0f1                          ldi ZH, high(table_of_unsorted_numbers)
+000005 d00d                          rcall GENERATE_NUMBERS
                                  
-                                     ; 3. Configuración inicial
-000007 e614                          ldi count, 100
-000008 e205                          ldi rand, 37      ; Semilla inicial
+                                     ; Algoritmo 1: Burbuja
+000006 e0e0                          ldi ZL, low(table_of_unsorted_numbers)
+000007 e0f1                          ldi ZH, high(table_of_unsorted_numbers)
+000008 e6a4                          ldi XL, low(table_of_sorted_numbers_alg1)
+000009 e0b1                          ldi XH, high(table_of_sorted_numbers_alg1)
+00000a d015                          rcall COPY_TABLE
+00000b d01a                          rcall BUBBLE_SORT
                                  
-                                 GENERATE:
-                                     ;--- Algoritmo: rand = (rand * 5) + 1 ---
-000009 2f20                          mov temp, rand    ; Copia el valor actual
-00000a 0f00                          lsl rand          ; rand = rand * 2
-00000b 0f00                          lsl rand          ; rand = rand * 4
-00000c 0f02                          add rand, temp    ; rand = (rand * 4) + original = * 5
-00000d 9503                          inc rand          ; rand = (rand * 5) + 1
+                                     ; Algoritmo 2: Selección
+00000c e0e0                          ldi ZL, low(table_of_unsorted_numbers)
+00000d e0f1                          ldi ZH, high(table_of_unsorted_numbers)
+00000e eca8                          ldi XL, low(table_of_sorted_numbers_alg2)
+00000f e0b1                          ldi XH, high(table_of_sorted_numbers_alg2)
+000010 d00f                          rcall COPY_TABLE
+000011 d026                          rcall SELECTION_SORT
                                  
-                                     ;--- Guardar en memoria ---
-00000e 9301                          st Z+, rand       ; Guarda el resultado y avanza el puntero Z
+                                 END_LOOP:
+000012 cfff                          rjmp END_LOOP
                                  
-                                     ;--- Control de bucle ---
-00000f 951a                          dec count
-000010 f7c1                          brne GENERATE
+                                 ;--- GENERAR NÚMEROS ---
+                                 GENERATE_NUMBERS:
+000013 e0e0                          ldi ZL, low(table_of_unsorted_numbers)
+000014 e0f1                          ldi ZH, high(table_of_unsorted_numbers)
+000015 e614                          ldi count, 100
+000016 e205                          ldi rand, 37
+                                 GEN_L:
+000017 2f20                          mov temp, rand
+000018 0f00                          lsl rand
+000019 0f00                          lsl rand
+00001a 0f02                          add rand, temp
+00001b 9503                          inc rand
+00001c 9301                          st Z+, rand
+00001d 951a                          dec count
+00001e f7c1                          brne GEN_L
+00001f 9508                          ret
                                  
-                                 END:
+                                 ;--- COPIAR TABLA ---
+                                 COPY_TABLE:
+000020 e614                          ldi count, 100
+                                 COPY_L:
+000021 9121                          ld temp, Z+
+000022 932d                          st X+, temp
+000023 951a                          dec count
+000024 f7e1                          brne COPY_L
+000025 9508                          ret
+                                 
+                                 ;--- BUBBLE SORT (Algoritmo 1) ---
+                                 BUBBLE_SORT:
+000026 e634                          ldi aux1, 100        ; Límite exterior
+                                 OUTER_B:
+000027 e6e4                          ldi ZL, low(table_of_sorted_numbers_alg1)
+000028 e0f1                          ldi ZH, high(table_of_sorted_numbers_alg1)
+000029 2f43                          mov aux2, aux1
+00002a 954a                          dec aux2
+00002b f059                          breq DONE_B          ; Si terminamos las pasadas
+                                 INNER_B:
+00002c 8000                          ld r0, Z             ; Carga el elemento actual (i)
+00002d 8011                          ldd r1, Z+1          ; Carga el elemento siguiente (i+1) SIN mover el puntero Z
+                                     
+00002e 1410                          cp r1, r0            ; Compara (i+1) con (i)
+00002f f410                          brsh NO_SWAP_B       ; Si (i+1) >= (i), no intercambiar
+                                 
+                                     ; --- Intercambio (Swap) ---
+000030 8210                          st Z, r1             ; Guarda el menor en la posición (i)
+000031 8201                          std Z+1, r0          ; Guarda el mayor en la posición (i+1)
+                                 
+                                 NO_SWAP_B:
+000032 9631                          adiw ZL, 1           ; Avanza el puntero Z a la siguiente posición
+000033 954a                          dec aux2
+000034 f7b9                          brne INNER_B
+                                     
+000035 953a                          dec aux1
+000036 f781                          brne OUTER_B
+                                 DONE_B:
+000037 9508                          ret
+                                 
+                                 ;--- SELECTION SORT (Algoritmo 2) ---
+                                 SELECTION_SORT:
+000038 eca8                          ldi XL, low(table_of_sorted_numbers_alg2)
+000039 e0b1                          ldi XH, high(table_of_sorted_numbers_alg2)
+00003a e633                          ldi aux1, 99    ; N-1 pasadas
+                                 OUTER_S:
+00003b 2fea                          mov ZL, XL      ; Puntero de búsqueda empieza en la posición actual de X
+00003c 2ffb                          mov ZH, XH
+00003d 9151                          ld min_val, Z+  ; El primer valor es el mínimo inicial
+00003e 2f8a                          mov r24, XL     ; Guardar dirección del mínimo actual
+00003f 2f9b                          mov r25, XH
+                                     
+000040 2f43                          mov aux2, aux1
+                                 INNER_S:
+000041 8120                          ld temp, Z      ; Cargar siguiente para comparar
+000042 1725                          cp temp, min_val
+000043 f418                          brsh NEXT_S
+000044 2f52                          mov min_val, temp ; Actualizar valor mínimo
+000045 2f8e                          mov r24, ZL       ; Guardar dirección del nuevo mínimo
+000046 2f9f                          mov r25, ZH
+                                 NEXT_S:
+000047 9631                          adiw ZL, 1      ; Avanzar puntero de búsqueda
+000048 954a                          dec aux2
+000049 f7b9                          brne INNER_S
+                                 
+                                     ; Intercambio final entre X y la dirección del mínimo (R25:R24)
+00004a 912c                          ld temp, X
+00004b 935c                          st X, min_val
+00004c 2fe8                          mov ZL, r24
+00004d 2ff9                          mov ZH, r25
+00004e 8320                          st Z, temp
+                                 
+00004f 9611                          adiw XL, 1      ; Avanzar la frontera de la tabla ordenada
+000050 953a                          dec aux1
+000051 f749                          brne OUTER_S
 
 
 RESOURCE USE INFORMATION
@@ -1099,40 +1191,40 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega328P" register use summary:
-x  :   0 y  :   0 z  :   1 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
+x  :   3 y  :   0 z  :   9 r0 :   3 r1 :   3 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:   7 r17:   2 r18:   6 r19:   0 r20:   0 
-r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
-r29:   0 r30:   1 r31:   1 
-Registers used: 6 out of 35 (17.1%)
+r13:   0 r14:   0 r15:   0 r16:   7 r17:   4 r18:  13 r19:   6 r20:   5 
+r21:   4 r22:   0 r23:   0 r24:   3 r25:   3 r26:   6 r27:   5 r28:   0 
+r29:   0 r30:   9 r31:   7 
+Registers used: 16 out of 35 (45.7%)
 
 "ATmega328P" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   0 add   :   1 adiw  :   0 and   :   0 
+.lds  :   0 .sts  :   0 adc   :   0 add   :   1 adiw  :   3 and   :   0 
 andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
-brcc  :   0 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
+brcc  :   0 brcs  :   0 break :   0 breq  :   1 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :   1 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brne  :   6 brpl  :   0 brsh  :   2 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   0 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
-clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :   0 cpse  :   0 dec   :   1 eor   :   0 fmul  :   0 fmuls :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   2 cpc   :   0 
+cpi   :   0 cpse  :   0 dec   :   7 eor   :   0 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   1 jmp   :   0 
-ld    :   0 ldd   :   0 ldi   :   6 lds   :   0 lpm   :   0 lsl   :   2 
-lsr   :   0 mov   :   1 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+ld    :   5 ldd   :   1 ldi   :  21 lds   :   0 lpm   :   0 lsl   :   2 
+lsr   :   0 mov   :  12 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
 neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :   2 pop   :   0 
-push  :   0 rcall :   0 ret   :   0 reti  :   0 rjmp  :   2 rol   :   0 
+push  :   0 rcall :   5 ret   :   4 reti  :   0 rjmp  :   2 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
 sei   :   0 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :   1 std   :   0 sts   :   0 
+sez   :   0 sleep :   0 spm   :   0 st    :   5 std   :   1 sts   :   0 
 sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 10 out of 113 (8.8%)
+Instructions used: 19 out of 113 (16.8%)
 
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000024     36      0     36   32768   0.1%
-[.dseg] 0x000100 0x000164      0    100    100    2048   4.9%
+[.cseg] 0x000000 0x0000a6    166      0    166   32768   0.5%
+[.dseg] 0x000100 0x00022c      0    300    300    2048  14.6%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
 Assembly complete, 0 errors, 0 warnings

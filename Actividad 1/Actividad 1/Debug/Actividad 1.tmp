@@ -23,9 +23,23 @@
   <FILE>Actividad 1.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <table_of_unsorted_numbers><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>15</LINE></table_of_unsorted_numbers>
-  <RESET><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>23</LINE></RESET>
-  <GENERATE><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>38</LINE></GENERATE>
-  <END><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>53</LINE></END>
+  <table_of_unsorted_numbers><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>18</LINE></table_of_unsorted_numbers>
+  <table_of_sorted_numbers_alg1><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>19</LINE></table_of_sorted_numbers_alg1>
+  <table_of_sorted_numbers_alg2><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>20</LINE></table_of_sorted_numbers_alg2>
+  <RESET><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>27</LINE></RESET>
+  <GENERATE_NUMBERS><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>55</LINE></GENERATE_NUMBERS>
+  <COPY_TABLE><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>72</LINE></COPY_TABLE>
+  <BUBBLE_SORT><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>82</LINE></BUBBLE_SORT>
+  <SELECTION_SORT><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>112</LINE></SELECTION_SORT>
+  <END_LOOP><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>51</LINE></END_LOOP>
+  <GEN_L><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>60</LINE></GEN_L>
+  <COPY_L><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>74</LINE></COPY_L>
+  <OUTER_B><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>84</LINE></OUTER_B>
+  <DONE_B><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>108</LINE></DONE_B>
+  <INNER_B><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>90</LINE></INNER_B>
+  <NO_SWAP_B><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>101</LINE></NO_SWAP_B>
+  <OUTER_S><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>116</LINE></OUTER_S>
+  <INNER_S><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>124</LINE></INNER_S>
+  <NEXT_S><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>131</LINE></NEXT_S>
  </LABELS>
 </ASSEMBLER_INFO>

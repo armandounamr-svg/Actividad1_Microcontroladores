@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm Sun Mar 08 23:50:59 2026
+AVRASM ver. 2.2.8  C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm Mon Mar 09 19:28:29 2026
 
 
 EQU  SIGNATURE_000 0000001e
@@ -698,7 +698,24 @@ EQU  INT_VECTORS_SIZE 00000034
 DEF  rand         r16
 DEF  count        r17
 DEF  temp         r18
+DEF  aux1         r19
+DEF  aux2         r20
+DEF  min_val      r21
 DSEG table_of_unsorted_numbers 00000100
+DSEG table_of_sorted_numbers_alg1 00000164
+DSEG table_of_sorted_numbers_alg2 000001c8
 CSEG RESET        00000001
-CSEG GENERATE     00000009
-CSEG END          00000011
+CSEG GENERATE_NUMBERS 00000013
+CSEG COPY_TABLE   00000020
+CSEG BUBBLE_SORT  00000026
+CSEG SELECTION_SORT 00000038
+CSEG END_LOOP     00000012
+CSEG GEN_L        00000017
+CSEG COPY_L       00000021
+CSEG OUTER_B      00000027
+CSEG DONE_B       00000037
+CSEG INNER_B      0000002c
+CSEG NO_SWAP_B    00000032
+CSEG OUTER_S      0000003b
+CSEG INNER_S      00000041
+CSEG NEXT_S       00000047
