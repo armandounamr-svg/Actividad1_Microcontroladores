@@ -1,0 +1,45 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\Debug\BIG O PRUEBA 200.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>BIG O PRUEBA 200.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>BIG O PRUEBA 200.map</FILE>
+  <FILE>BIG O PRUEBA 200.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <table_of_unsorted_numbers><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>24</LINE></table_of_unsorted_numbers>
+  <table_of_sorted_numbers_alg1><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>25</LINE></table_of_sorted_numbers_alg1>
+  <table_of_sorted_numbers_alg2><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>26</LINE></table_of_sorted_numbers_alg2>
+  <RESET><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>33</LINE></RESET>
+  <GENERATE_NUMBERS><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>61</LINE></GENERATE_NUMBERS>
+  <COPY_TABLE><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>78</LINE></COPY_TABLE>
+  <BUBBLE_SORT><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>88</LINE></BUBBLE_SORT>
+  <SELECTION_SORT><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>118</LINE></SELECTION_SORT>
+  <END_LOOP><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>57</LINE></END_LOOP>
+  <GEN_L><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>66</LINE></GEN_L>
+  <COPY_L><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>80</LINE></COPY_L>
+  <OUTER_B><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>90</LINE></OUTER_B>
+  <DONE_B><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>114</LINE></DONE_B>
+  <INNER_B><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>96</LINE></INNER_B>
+  <NO_SWAP_B><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>107</LINE></NO_SWAP_B>
+  <OUTER_S><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>122</LINE></OUTER_S>
+  <INNER_S><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>130</LINE></INNER_S>
+  <NEXT_S><FILE>C:\Microcontroladores\BIG O PRUEBA 200\BIG O PRUEBA 200\main.asm</FILE><LINE>137</LINE></NEXT_S>
+ </LABELS>
+</ASSEMBLER_INFO>
