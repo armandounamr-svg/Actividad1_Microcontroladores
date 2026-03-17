@@ -1,19 +1,18 @@
 <ASSEMBLER_INFO>
  <VERSION>2.2.8</VERSION>
  <DEVICE>"ATmega328P"</DEVICE>
- <WORKING_DIR>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\Debug</WORKING_DIR>
+ <WORKING_DIR>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\Debug</WORKING_DIR>
  <INCLUDE_PATH>
   <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
   <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
   <DIR></DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</SOURCE_FILE>
+ <SOURCE_FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</SOURCE_FILE>
  <INCLUDED_FILES>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
-  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
-  <FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\Debug\Actividad 1.obj</FILE>
+  <FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\Debug\Actividad 1.obj</FILE>
  </OBJECT_FILES>
  <HEX_FILES>
   <FILE>Actividad 1.hex</FILE>
@@ -23,23 +22,23 @@
   <FILE>Actividad 1.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <table_of_unsorted_numbers><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>18</LINE></table_of_unsorted_numbers>
-  <table_of_sorted_numbers_alg1><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>19</LINE></table_of_sorted_numbers_alg1>
-  <table_of_sorted_numbers_alg2><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>20</LINE></table_of_sorted_numbers_alg2>
-  <RESET><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>27</LINE></RESET>
-  <GENERATE_NUMBERS><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>55</LINE></GENERATE_NUMBERS>
-  <COPY_TABLE><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>72</LINE></COPY_TABLE>
-  <BUBBLE_SORT><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>82</LINE></BUBBLE_SORT>
-  <SELECTION_SORT><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>112</LINE></SELECTION_SORT>
-  <END_LOOP><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>51</LINE></END_LOOP>
-  <GEN_L><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>60</LINE></GEN_L>
-  <COPY_L><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>74</LINE></COPY_L>
-  <OUTER_B><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>84</LINE></OUTER_B>
-  <DONE_B><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>108</LINE></DONE_B>
-  <INNER_B><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>90</LINE></INNER_B>
-  <NO_SWAP_B><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>101</LINE></NO_SWAP_B>
-  <OUTER_S><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>116</LINE></OUTER_S>
-  <INNER_S><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>124</LINE></INNER_S>
-  <NEXT_S><FILE>C:\Users\arman\OneDrive\Documentos\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>131</LINE></NEXT_S>
+  <table_of_unsorted_numbers><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>14</LINE></table_of_unsorted_numbers>
+  <table_of_sorted_numbers_alg1><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>15</LINE></table_of_sorted_numbers_alg1>
+  <table_of_sorted_numbers_alg2><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>16</LINE></table_of_sorted_numbers_alg2>
+  <RESET><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>23</LINE></RESET>
+  <GENERATE_NUMBERS><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>51</LINE></GENERATE_NUMBERS>
+  <COPY_TABLE><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>68</LINE></COPY_TABLE>
+  <BUBBLE_SORT><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>80</LINE></BUBBLE_SORT>
+  <SELECTION_SORT><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>113</LINE></SELECTION_SORT>
+  <END_LOOP><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>47</LINE></END_LOOP>
+  <GEN_L><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>56</LINE></GEN_L>
+  <COPY_L><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>70</LINE></COPY_L>
+  <BUBBLE_INNER><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>87</LINE></BUBBLE_INNER>
+  <Cambio><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>96</LINE></Cambio>
+  <NEXT><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>100</LINE></NEXT>
+  <DONE_B><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>108</LINE></DONE_B>
+  <OUTER><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>119</LINE></OUTER>
+  <INNER><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>131</LINE></INNER>
+  <SKIP><FILE>C:\Users\jossg\Documents\GitHub\Actividad1_Microcontroladores\Actividad 1\Actividad 1\main.asm</FILE><LINE>142</LINE></SKIP>
  </LABELS>
 </ASSEMBLER_INFO>
